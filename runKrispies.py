@@ -43,6 +43,4 @@ if __name__ == "__main__":
     path_to_file='/home/agni/Documents/SmartAtlasSpliter/'
     lines = [line.rstrip('\n') for line in open(file_name)]
     num_cores = multiprocessing.cpu_count()
-
-
     results = Parallel(n_jobs=num_cores)(delayed(split_for_mosiacing)(i,path_to_file) for i in lines)
